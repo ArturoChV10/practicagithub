@@ -32,7 +32,7 @@ public class Juego {
 	public static void main(String args[]) {
 		System.out.println("Iniciando juego");
 		
-		Carro ferrari = new Carro("El ferrari");		
+		Carro ferrari = new Carro("El ferrari");
 		Carro lambo = new Carro("el lambo");
 		Carro bmw = new Carro("el bmw");
 		
@@ -46,7 +46,7 @@ public class Juego {
 
 		Juego miGame = new Juego();
 		miGame.seleccionarCarroyPista(ferrari, track2);
-		ferrari.asignarPista(track2);		
+		ferrari.asignarPista(track2);
 		miGame.start();
 		
 		// 3.Player.acelerar();
