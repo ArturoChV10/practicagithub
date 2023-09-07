@@ -268,6 +268,7 @@ struct listadoble
         noticia *ptrNoticia = static_cast<noticia *>(result);
         return ptrNoticia;
     }
+
 /*
     void manipularRelevancia(int pPosicionTitular, int pModificacion) {
         pModificacion = pModificacion * -1;
@@ -277,6 +278,7 @@ struct listadoble
         agregarPosicion(strPtr, futuraPosicion);
     }
 */
+
     void mostrarElementos()
     {
         struct nodo *cursor = start;

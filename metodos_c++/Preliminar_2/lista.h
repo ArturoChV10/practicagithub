@@ -14,6 +14,7 @@ description: tarea #1, peliminar 2.
 #include <sstream>
 #include <vector>
 #include "lista.h"
+#include "news.cpp"
 
 using namespace std;
 
@@ -45,6 +46,39 @@ struct listadoble
         cout << size << endl;
         return size;
     }
+
+/*    void sacarNoticias() {
+        Newsapi newsapi;
+        listadoble list2;
+        vector<News *> allrecords = newsapi.getRecords();
+    
+        for(int indice = 0; indice < 5; indice++) {
+            std::string* vNoticia = new std::string(allrecords.at(0)->getDescription());
+            list2.agregarInicio(vNoticia);
+        }
+    
+        cout << "Hola" << endl;
+    }
+*/
+
+    void sacarNoticias() {
+        Newsapi newsapi;
+        listadoble* list2 = new listadoble;
+        vector<News *> allrecords = newsapi.getRecords();
+//        cout << allrecords.at(0)->getTitle() << endl;
+//        for(int indice = 0; indice < 5; indice++) {
+    //Noticia de tipo News, que pertenece al vector allrecords
+        for(News* noticia : allrecords) {
+            cout << noticia->getTitle() << endl;
+            string ptrString = noticia->getTitle();
+            list2->agregarInicio(&ptrString);
+        }
+ //       string vNoticia = allrecords.at(0)->getTitle();
+   //     list2.agregarFinal(&vNoticia);
+//        }
+        cout << "Hola" << endl;
+    }
+
 
     // Método que agrega un elemento al final de la lista
     void agregarFinal(string *pData)
@@ -188,7 +222,7 @@ struct listadoble
         }
     }
 
-    noticia *eliminarPosicion(int pPosicion)
+    string *eliminarPosicion(int pPosicion)
     {
         void *result = nullptr; // Esta línea crea una variable tipo void llamada result, esta servirá para guardar el nodo eliminado
 
@@ -265,18 +299,23 @@ struct listadoble
                 }
             }
         }
-        noticia *ptrNoticia = static_cast<noticia *>(result);
-        return ptrNoticia;
+//        noticia *ptrNoticia = static_cast<noticia *>(result);
+  //      return ptrNoticia;
+//        cout << typeid(stringValue).name() << endl;
+//        cout << result << endl;
+        return static_cast<string*>(result);
     }
-/*
+
+
     void manipularRelevancia(int pPosicionTitular, int pModificacion) {
         pModificacion = pModificacion * -1;
         int futuraPosicion = pPosicionTitular + pModificacion;
-        noticia *variableDato = eliminarPosicion(pPosicionTitular);
-        string *strPtr = static_cast<string *>(variableDato);
-        agregarPosicion(strPtr, futuraPosicion);
+        string *copiaElemento = eliminarPosicion(pPosicionTitular);
+//        noticia *variableDato = eliminarPosicion(pPosicionTitular);
+//        string *strPtr = static_cast<string *>(variableDato);
+        agregarPosicion(copiaElemento, futuraPosicion);
     }
-*/
+
     void mostrarElementos()
     {
         struct nodo *cursor = start;
@@ -425,11 +464,11 @@ struct listadoble
         int variablePalabra = buscarElementoPalabra(pPalabra);
         mostrarPosicion(variablePalabra);
     }
-/*
+
     void manipularRelevancia2(int pPosicionTitular, int pModificacion) {
         manipularRelevancia(pPosicionTitular, pModificacion);
     }
-*/
+
 };
 
 #endif

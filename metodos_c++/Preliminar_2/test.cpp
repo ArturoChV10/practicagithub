@@ -5,7 +5,7 @@
 int main(void)
 {
     listadoble miLista;
-    string myString1 = "Esta es una cadena de texto larga número 1. Puede contener múltiples líneas y caracteres especiales.";
+/*    string myString1 = "Esta es una cadena de texto larga número 1. Puede contener múltiples líneas y caracteres especiales.";
     string myString2 = "Aquí tienes otra cadena completamente diferente.";
     string myString3 = "Esto es un tercer ejemplo de texto distinto.";
     string myString4 = "Cadena número cuatro con contenido único.";
@@ -13,8 +13,9 @@ int main(void)
     string myString6 = "Sexto ejemplo de texto distinto del anterior.";
     string myString7 = "Séptima cadena con contenido único y diferente.";
     string myString8 = "Una octava línea de texto completamente distinta.";
-    string myString9 = "Noveno ejemplo de texto único y diferente.";
-    miLista.agregarInicio(&myString8);
+    string myString9 = "Noveno ejemplo de texto único y diferente.";*/
+    miLista.sacarNoticias();
+/*    miLista.agregarInicio(&myString8);
     miLista.agregarFinal(&myString9);
     miLista.agregarInicio(&myString7);
     miLista.agregarInicio(&myString6);
@@ -24,10 +25,19 @@ int main(void)
     miLista.agregarInicio(&myString2);
     miLista.agregarInicio(&myString1);
     miLista.mostrarTitulares();
+    miLista.manipularRelevancia2(3, -4);
+    cout << "---------------" << endl;
+    miLista.getSize();
+//    miLista.eliminarPosicion(3);
+    miLista.getSize();
+    cout << "---------------" << endl;
+    miLista.mostrarTitulares();
     miLista.buscarTitulares("ejemplo");
     miLista.getSize();
-    miLista.eliminarTitulares("línea");
+//    miLista.eliminarTitulares("línea");*/
     miLista.getSize();
+    cout << "----------" << endl;
+    miLista.mostrarTitulares();
 
     return 0;
 }
